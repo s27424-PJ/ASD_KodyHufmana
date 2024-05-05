@@ -101,7 +101,7 @@ def encrypt_with_huffman(input_file, output_file):
         for char, code in sorted(huffman_codes.items()): 
             f.write(f"{char}: {code}\n".encode())
 
-        f.write(bytes([padding_size]))
+       
 
         byte_array = bytearray([int(padded_encoded_text[i:i + 8], 2) for i in range(0, len(padded_encoded_text), 8)])
         f.write(byte_array)
