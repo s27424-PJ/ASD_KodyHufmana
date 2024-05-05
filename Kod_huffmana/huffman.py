@@ -39,6 +39,7 @@ def huffman(text):
     huffman_codes = {}
 
     for i in range(1, n):
+        print("Kolejka po kroku", i, ":", [node.freq for node in Q])
         x = extract_min(Q)
         y = extract_min(Q)
         z = HuffmanNode()
