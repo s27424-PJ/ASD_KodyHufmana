@@ -98,7 +98,7 @@ def encrypt_with_huffman(input_file, output_file):
     padded_encoded_text = encoded_text + '0' * padding_size
 
     with open(output_file, 'wb') as f:
-        for char, code in sorted(huffman_codes.items()):  # Writing Huffman codes to the binary file
+        for char, code in sorted(huffman_codes.items()): 
             f.write(f"{char}: {code}\n".encode())
 
         f.write(bytes([padding_size]))
@@ -111,10 +111,8 @@ def encrypt_with_huffman(input_file, output_file):
 
 
 
-    # Write the decoded text to the output file
-    with open(output_file, 'w') as f:
-        f.write(decoded_text)
 
+   
 
 input_file = "input.txt"
 output_file = "encrypted.bin"
