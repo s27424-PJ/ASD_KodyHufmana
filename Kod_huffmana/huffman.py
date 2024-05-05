@@ -73,17 +73,6 @@ def encode_with_huffman(text):
     encoded_text = ''.join(huffman_codes[char] for char in text)
     return encoded_text
 
-def decode_with_huffman(encoded_text, huffman_codes):
-    reverse_codes = {code: char for char, code in huffman_codes.items()}
-    decoded_text = ""
-    code = ""
-    for bit in encoded_text:
-        code += bit
-        if code in reverse_codes:
-            decoded_text += reverse_codes[code]
-            code = ""
-    return decoded_text
-
 def encrypt_with_huffman(input_file, output_file):
     with open(input_file, 'r') as f:
         text = f.read()
